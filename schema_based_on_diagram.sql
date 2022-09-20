@@ -47,4 +47,3 @@ CREATE TABLE treatments_histories (
     CONSTRAINT fk_treatments FOREIGN KEY (treatment_id) REFERENCES treatments(id),
     CONSTRAINT fk_medical_histories FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id)
 );
-
