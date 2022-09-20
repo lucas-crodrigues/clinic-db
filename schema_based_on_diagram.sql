@@ -39,3 +39,12 @@ CREATE TABLE treatments (
     type VARCHAR NOT NULL,
     name VARCHAR NOT NULL
 );
+
+CREATE TABLE treatments_histories (
+    id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    treatment_id INT NOT NULL,
+    medical_history_id INT NOT NULL,
+    CONSTRAINT fk_treatments FOREIGN KEY (treatment_id) REFERENCES treatments(id),
+    CONSTRAINT fk_medical_histories FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id)
+);
+
